@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import "../styles/footer.css";
 
 const Footer = () => {
   return (
-    <footer class="bg-white border-t border-[#ebebeb]">
-      <div class="px-4 py-8 mx-auto sm:px-6 lg:px-16">
-        <div class="flex flex-col items-center md:flex-row md:justify-between gap-2">
-          <div class="flex gap-2 md:gap-1.5 items-center flex-col md:flex-row">
+    <footer id="footer">
+      <div class="footer__container">
+          <div class="footer__copywriting">
             <a class="flex font-semibold items-center text-[#022a3d]">
               <img
                 class="h-10 w-auto"
@@ -20,15 +19,11 @@ const Footer = () => {
             </p>
           </div>
 
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="#"
-              class="text-sm font-light leading-6 text-[#717171] hover:underline"
-            >
+          <div class="footer__navegation">
+            <a href="#" class="footer__navegation--enlace">
               <Link to="/">Inicio</Link>
             </a>
           </div>
-        </div>
       </div>
     </footer>
   );
