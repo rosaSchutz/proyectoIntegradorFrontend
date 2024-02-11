@@ -101,7 +101,7 @@ const Carousel = React.forwardRef((
       <div
         ref={ref}
         onKeyDownCapture={handleKeyDown}
-        className={cn("flex flex-row items-center justify-center", className)}
+        className={cn("flex flex-row items-center justify-center max-w-[90vw]", className)}
         role="region"
         aria-roledescription="carousel"
         {...props}>
@@ -120,7 +120,7 @@ const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
       <div
         ref={ref}
         className={cn(
-          "flex gap-4",
+          "flex",
           orientation === "horizontal",
           className
         )}

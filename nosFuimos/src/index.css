@@ -1,3 +1,42 @@
 :root {
     font-family: 'Nunito Sans', 'Montserrat', sans-serif;
+
+    /*Colores del texto*/
+    --text-color-gray: #717171;
+    --text-color-blue: #022a3d;
+    --text-color-black: #222222;
+
+    /*Colores del borde*/
+    --border-color-gray: #ebebeb;
+
+    /*Colores de fondo*/
+    --background-color-header: #ffffff;
+
+    /*Styles textos*/
+    --font-size-base: 16px;
+    --line-height-base: 24px;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
+    --font-size-xl: 20px;
+    --line-height-xl: 28px;
+
+    /*Styles buttons*/
+    --button-primary-background: #ffffff;
+    --button-primary-border: 1px solid var(--border-color-gray);
+    --button-primary-border-radius: 6px;
+    --button-primary-padding: 10px 14px;
+}
+
+/* Styles buttons */
+.button-primary {
+    background: var(--button-primary-background);
+    border: var(--button-primary-border);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    border-radius: var(--button-primary-border-radius);
+    padding: var(--button-primary-padding);
 }

@@ -1,0 +1,132 @@
+/*Estilos del header*/
+#header {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 40;
+    background-color: var(--background-color-header);
+    border-bottom-width: 1px;
+    border-color: var(--border-color-gray);
+    padding: 16px;
+}
+
+@media (min-width: 640px) {
+    #header {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #header {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Estilos menu de logo y titulo*/
+.header__logo{
+    display: flex;
+}
+
+@media (min-width: 1024px) {
+    .header__logo {
+        flex: 1 1 0%;
+    }
+}
+
+.header__logo-enlace{
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color-blue);
+}
+
+.header__logo-title {
+    display: flex;
+    gap: 6px;
+}
+
+.header__logo-img {
+    height: 32px;
+    width: auto;
+}
+
+/*Estilos menu de navegacion*/
+.header__navigation {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .header__navigation {
+        display: flex;
+        gap: 48px;
+    }
+}
+
+.header__navigation--links {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-light);
+    color: var(--text-color-gray);
+}
+
+/*Estilos menu de login y registro*/
+.header__auth {
+    display: none;
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .header__auth {
+        display: flex;
+        flex: 1 1 0%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.header__auth--buttons {
+    background: var(--button-primary-background);
+    border: var(--button-primary-border);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    border-radius: var(--button-primary-border-radius);
+    padding: var(--button-primary-padding);
+}
+
+/*Estilos del menu mobile*/
+.header__menuMobile {
+    display: flex;
+}
+
+@media (min-width: 1024px) {
+    .header__menuMobile {
+        display: none;
+    }
+}
+
+.header__menuMobile--button {
+    padding: 10px;
+    color: var(--text-color-black);
+}
+
+.header__menuMobile--button:hover {
+    border-radius: var(--button-primary-border-radius);
+    background-color: var(--border-color-gray);
+}
+
+.header__menuMobile--svg {
+    height: 24px;
+    width: 24px;
+}
+
