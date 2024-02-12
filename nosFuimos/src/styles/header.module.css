@@ -77,7 +77,7 @@
     text-decoration: none;
 }
 
-.navigation__links a{
+.navigation__links a {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-light);
@@ -98,6 +98,19 @@
         justify-content: flex-end;
         align-items: center;
     }
+}
+
+/*Estilos de los botones del header*/
+.header__buttons {
+    background: var(--button-primary-background);
+    border: var(--button-primary-border);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    border-radius: var(--button-primary-border-radius);
+    padding: var(--button-primary-padding);
+    text-decoration: none;
 }
 
 /*Estilos del menu mobile*/
@@ -126,4 +139,36 @@
 .menuMobile__svg {
     height: 24px;
     width: 24px;
+}
+
+/* Oculta el input checkbox */
+.menu__toggle {
+    display: none;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0px;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: var(--button-primary-border-radius);
+    width: 280px;
+    text-align: right;
+    padding: 22px;
+}
+
+.menuFlex {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mostrar el menú al hacer clic en el icono */
+.menu__toggle:checked + .hamburger__menu + .menu {
+    display: block;
 }

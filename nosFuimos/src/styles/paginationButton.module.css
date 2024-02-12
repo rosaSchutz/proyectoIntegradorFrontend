@@ -1,4 +1,8 @@
 /*Estilos de los botones de paginación*/
+.articlePagination {
+    padding: 50px 0;
+}
+
 .sectionPagination {
     display: flex;
 }
@@ -34,6 +38,7 @@
     color: var(--text-color-gray);
     background-color: #ffffff;
     border: 1px solid var(--border-color-gray);
+    border-radius: 8px;
 }
 
 .sectionPagination__flecha:hover {
@@ -41,12 +46,14 @@
     color: var(--text-color-black);
 }
 
-.flechaDerecha {
-    border-start-end-radius: 8px;
-    border-end-end-radius: 8px;
+/* Redondea solo el extremo derecho para el primer elemento de flecha */
+.sectionPagination__flecha:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.flechaIzquierda {
-    border-start-start-radius: 8px;
-    border-end-start-radius: 8px;
+/* Redondea solo el extremo izquierdo para el último elemento de flecha */
+.sectionPagination__flecha:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

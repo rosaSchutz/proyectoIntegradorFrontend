@@ -48,6 +48,7 @@
 
 body {
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {

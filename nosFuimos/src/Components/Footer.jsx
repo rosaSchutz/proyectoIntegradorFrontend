@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 import styles from "../styles/footer.module.css";
 
 const Footer = () => {
@@ -15,8 +15,10 @@ const Footer = () => {
           </p>
         </div>
 
-        <div  className={styles.navegation}>
-          <Navbar/>
+        <div className={styles.navegation}>
+          <a href="#" className={styles.navegation__enlace}>
+            <Link to="/">Inicio</Link>
+          </a>
         </div>
       </div>
     </footer>
