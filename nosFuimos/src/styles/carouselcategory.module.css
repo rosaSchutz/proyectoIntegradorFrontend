@@ -1,0 +1,56 @@
+/*Estilos del texto e imagen de la categoria*/
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    max-width: 90%;
+    gap: 50px;
+    align-items: center;
+}
+
+@media (min-width: 1536px) {
+    .carousel {
+        max-width: 80%;
+    }
+}
+
+.carousel__category {
+    flex: 0 0 30%;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+
+.carouselItem__categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.carouselItem__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.carouselItem__img:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: scale(0.9);
+}
+
+@media (max-width: 639px) {
+    .carouselItem__img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.carouselItem__text {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-light);
+    text-align: center;
+}

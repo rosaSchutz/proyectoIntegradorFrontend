@@ -78,18 +78,6 @@
     gap: 16px;
 }
 
-.navegation__enlace {
-    text-decoration: none;
-}
-
-.navegation__enlace a{
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-sm);
-    font-weight: var(--font-weight-light);
-    color: var(--text-color-gray);
-    text-decoration: none;
-}
-
 .navegation__enlace:hover {
     text-decoration: underline;
 }

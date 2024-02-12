@@ -1,20 +1,20 @@
 import React from 'react'
-import "../../../styles/searchButton.css"
+import styles from "../../../styles/searchButton.module.css"
 
 const SearchButton = () => {
     return (
-        <form class="searchButton">
-            <div class="searchButton__container">
+        <form className={styles.searchButton}>
+            <div className={styles.searchButton__container}>
                 <input
                     type="search"
                     id="default-search"
-                    class="searchButton__container--input"
+                    className={styles.searchButton__input}
                     placeholder="Explora destinos"
                     required
                 />
                 <button
                     type="submit"
-                    class="searchButton__container--buttton"
+                    className={styles.searchButton__buttton}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -1,11 +1,11 @@
 import React from "react";
-import "../../../styles/paginationButton.css";
+import styles from "../../../styles/paginationButton.module.css";
 
 const PaginationButton = () => {
     return (
-        <article class="articlePagination">
-            <section class="sectionPagination">
-                <a href="#" class="sectionPagination__flecha flechaIzquierda">
+        <article className={styles.articlePagination}>
+            <section className={styles.sectionPagination}>
+                <a href="#" className={styles.sectionPagination__flecha}>
                     <svg
                         aria-hidden="true"
                         height="12"
@@ -24,13 +24,13 @@ const PaginationButton = () => {
                     </svg>
                 </a>
 
-                <a href="#" class="sectionPagination__numeros"> 1 </a>
-                <a href="#" class="sectionPagination__numeros"> 2 </a>
-                <a href="#" class="sectionPagination__numeros"> 3 </a>
-                <a href="#" class="sectionPagination__numeros"> 4 </a>
-                <a href="#" class="sectionPagination__numeros"> 5 </a>
+                <a href="#" className={styles.sectionPagination__numeros}> 1 </a>
+                <a href="#" className={styles.sectionPagination__numeros}> 2 </a>
+                <a href="#" className={styles.sectionPagination__numeros}> 3 </a>
+                <a href="#" className={styles.sectionPagination__numeros}> 4 </a>
+                <a href="#" className={styles.sectionPagination__numeros}> 5 </a>
 
-                <a href="#" class="sectionPagination__flecha flechaDerecha">
+                <a href="#" className={styles.sectionPagination__flecha}>
                     <svg
                         aria-hidden="true"
                         height="12"

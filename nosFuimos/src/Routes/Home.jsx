@@ -3,19 +3,19 @@ import SearchButton from "../Components/ui/Buttons/SearchButton";
 import CarouselCategory from "../Components/CarouselCategory";
 import Card from "../Components/Card";
 import PaginationButton from "../Components/ui/Buttons/PaginationButton";
-import "../styles/home.css";
+import styles from "../styles/home.module.css"
 
 const Home = () => {
     return (
-        <main id="main">
-            <div class="main__searchButton">
+        <main className={styles.main}>
+            <div className={styles.main__searchButton}>
                 <SearchButton />
             </div>
 
             <CarouselCategory />
 
             <article>
-                <section class="main__sectionCard">
+                <section className={styles.main__sectionCard}>
                     <Card />
                     <Card />
                     <Card />

@@ -5,7 +5,7 @@
 
 @media (min-width: 640px) {
     .searchButton {
-        min-width: 34rem;
+        min-width: 33rem;
     }
 }
 
@@ -14,7 +14,7 @@
 }
 
 /*Estilos del input*/
-.searchButton__container--input {
+.searchButton__input {
     display: block;
     width: 100%;
     font-size: var(--font-size-sm);
@@ -23,31 +23,33 @@
     color: var(--text-color-gray);
     border-radius: 9999px;
     background-color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
-    padding: 12px;
+    padding: 13px;
     padding-inline-start: 40px;
-    border-width: 1px;
-    border-color: var(--border-color-gray);
+    border: 1px solid #dddddd;
+    font-family: 'Nunito Sans', 'Montserrat', sans-serif;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-.searchButton__container--input:hover {
-    background-color: var(--border-color-gray);
+.searchButton__input:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.searchButton__container--input:focus {
+.searchButton__input:focus {
     background-color: #ffffff;
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
 /*Estilos del boton de lupa*/
-.searchButton__container--buttton {
+.searchButton__buttton {
     color: #ffffff;
     position: absolute;
     background-color: var(--border-color-gray);
-    border-radius: 9999px;
+    border: none;
     padding: 8px;
     bottom: 8px;
     inset-inline-end: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }

@@ -4,6 +4,7 @@
     overflow: hidden;
     border-radius: var(--button-primary-border-radius);
     background-color: var(--border-color-gray);
+    height: 65%;
 }
 
 .containerImage:hover {

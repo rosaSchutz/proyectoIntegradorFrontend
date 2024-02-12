@@ -1,21 +1,21 @@
 import React from "react";
-import Categoria from "../Components/Categoria";
-import "../styles/categoria.css";
+import Category from "../Components/Category";
+import styles from "../styles/carouselcategory.module.css";
 
 const CarouselCategory = () => {
     return (
-        <div class="carousel" id="category-carousel">
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
-            <Categoria />
+        <div className={styles.carousel}>
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
+            <Category />
         </div>
     );
 };

@@ -1,22 +1,22 @@
 /*Estilos de la seccion de main del home*/
-#main {
+.main {
     display: grid;
     height: 100%;
     place-items: center;
     background-color: var(--background-color-main);
     padding: 96px 16px;
-    gap: 40px;
+    gap: 30px;
 }
 
 @media (min-width: 640px) {
-    #main {
+    .main {
         padding-top: 128px;
         padding-bottom: 128px;
     }
 }
 
 @media (min-width: 1024px) {
-    #main {
+    .main {
         padding-left: 64px;
         padding-right: 64px;
     }
@@ -34,5 +34,5 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 24px;
-    row-gap: 40px;
+    row-gap: 50px;
 }
