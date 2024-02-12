@@ -1,26 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/footer.css";
+import styles from "../styles/footer.module.css";
 
 const Footer = () => {
   return (
-    <footer id="footer">
-      <div class="footer__container">
-        <div class="footer__copywriting">
-          <a class="footer__copywriting--enlace">
-            <img
-              class="footer__copywriting--logo"
-              src="../../public/nosfuimosDos.png"
-              alt=""
-            />
+    <footer className={styles.footer}>
+      <div className={styles.footer__container}>
+        <div className={styles.copywriting}>
+          <a href="#" className={styles.enlace}>
+            <img className={styles.logo} src="../../public/nosfuimosDos.png" alt="" />
           </a>
-          <p class="footer__copywriting--textoCopywriting">
+          <p  className={styles.textoCopywriting}>
             ©️ 2024 Nos Fuimos.
           </p>
         </div>
 
-        <div class="footer__navegation">
-          <a href="#" class="footer__navegation--enlace">
+        <div  className={styles.navegation}>
+          <a href="#" className={styles.navegation__enlace}>
             <Link to="/">Inicio</Link>
           </a>
         </div>

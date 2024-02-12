@@ -1,7 +1,7 @@
 /*Estilos del footer*/
-#footer {
+.footer {
     background-color: var(--background-color-footer);
-    border: 1px solid var(--border-color-gray);
+    border-top: 1px solid var(--border-color-gray);
 }
 
 .footer__container {
@@ -37,7 +37,7 @@
 
 /*Estilos de la seccion copywriting*/
 
-.footer__copywriting {
+.copywriting {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,25 +45,25 @@
 }
 
 @media (min-width: 768px) {
-    .footer__copywriting {
+    .copywriting {
         gap: 6px;
         flex-direction: row;
     }
 }
 
-.footer__copywriting--enlace {
+.enlace {
     display: flex;
     font-weight: var(--font-weight-semibold);
     align-items: center;
     color: var(--text-color-blue);
 }
 
-.footer__copywriting--logo {
+.logo {
     width: auto;
     height: 40px;
 }
 
-.footer__copywriting--textoCopywriting {
+.textoCopywriting {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     font-weight: var(--font-weight-light);
@@ -71,20 +71,25 @@
 }
 
 /*Estilos de la seccion de navegation*/
-.footer__navegation {
+.navegation {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
 }
 
-.footer__navegation--enlace {
+.navegation__enlace {
+    text-decoration: none;
+}
+
+.navegation__enlace a{
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     font-weight: var(--font-weight-light);
     color: var(--text-color-gray);
+    text-decoration: none;
 }
 
-.footer__navegation--enlace:hover {
+.navegation__enlace:hover {
     text-decoration: underline;
 }

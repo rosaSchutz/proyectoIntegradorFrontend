@@ -1,9 +1,9 @@
 import React from 'react'
-import "../../../styles/headerButton.css"
+import styles from "../../../styles/headerButton.module.css"
 
 const HeaderButton = ({ title }) => {
   return (
-    <a href="#" class="header__auth--buttons">
+    <a href="#" className={styles.header__buttons}>
         {title}
     </a>
   )

@@ -1,22 +1,22 @@
 /*Estilo de la imagen de la tarjeta*/
-.containerCard__containerImage {
+.containerImage {
     width: 100%;
     overflow: hidden;
     border-radius: var(--button-primary-border-radius);
     background-color: var(--border-color-gray);
 }
 
-.containerCard__containerImage:hover {
+.containerImage:hover {
     opacity: 0.75;
 }
 
 @media (min-width: 640px) {
-    .containerCard__containerImage {
+    .containerImage {
         height: 75%;
     }
 }
 
-.containerCard__containerImage--image {
+.image {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -24,16 +24,16 @@
 }
 
 /*Estilos de los textos de la tarjeta*/
-.containerCard__containerText {
+.containerText {
     margin-top: 16px;
 }
 
-.containerCard__containerText--containerTitle {
+.containerTitle {
     display: flex;
     justify-content: space-between;
 }
 
-.containerCard__containerText--title {
+.title {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-semibold);
@@ -43,20 +43,20 @@
     white-space: nowrap;
 }
 
-.containerCard__containerText--svgStart {
+.svgStart {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.containerCard__containerText--parrafoStart {
+.parrafoStart {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-medium);
     color: var(--text-color-black);
 }
 
-.containerCard__containerText--parrafoDetalle {
+.detalle {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-light);
@@ -66,7 +66,7 @@
     white-space: nowrap;
 }
 
-.containerCard__containerText--parrafo {
+.detallePrecio {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-medium);

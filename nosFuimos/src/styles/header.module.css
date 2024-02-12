@@ -1,24 +1,24 @@
 /*Estilos del header*/
-#header {
+.header {
     position: fixed;
     left: 0px;
     right: 0px;
     top: 0px;
     z-index: 40;
     background-color: var(--background-color-header);
-    border: 1px solid var(--border-color-gray);
+    border-bottom: 1px solid var(--border-color-gray);
     padding: 16px;
 }
 
 @media (min-width: 640px) {
-    #header {
+    .header {
         padding-left: 24px;
         padding-right: 24px;
     }
 }
 
 @media (min-width: 1024px) {
-    #header {
+    .header {
         padding-left: 64px;
         padding-right: 64px;
     }
@@ -31,46 +31,49 @@
 }
 
 /*Estilos menu de logo y titulo*/
-.header__logo {
+.logo {
     display: flex;
 }
 
 @media (min-width: 1024px) {
-    .header__logo {
+    .logo {
         flex: 1 1 0%;
     }
 }
 
-.header__logo-enlace {
+.enlace {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
     font-weight: var(--font-weight-semibold);
     color: var(--text-color-blue);
+    text-decoration: none;
 }
 
-.header__logo-title {
+.title {
     display: flex;
     gap: 6px;
+    color: var(--text-color-blue);
+    text-decoration: none;
 }
 
-.header__logo-img {
+.img {
     height: 32px;
     width: auto;
 }
 
 /*Estilos menu de navegacion*/
-.header__navigation {
+.navigation {
     display: none;
 }
 
 @media (min-width: 1024px) {
-    .header__navigation {
+    .navigation {
         display: flex;
         gap: 48px;
     }
 }
 
-.header__navigation--links {
+.navigation__links {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     font-weight: var(--font-weight-light);
@@ -93,27 +96,29 @@
 }
 
 /*Estilos del menu mobile*/
-.header__menuMobile {
+.menuMobile {
     display: flex;
 }
 
 @media (min-width: 1024px) {
-    .header__menuMobile {
+    .menuMobile {
         display: none;
     }
 }
 
-.header__menuMobile--button {
-    padding: 10px;
+.menuMobile__button {
+    padding: 9px;
     color: var(--text-color-black);
+    border: none;
+    border-radius: var(--button-primary-border-radius);
+    background-color: #ffffff;
 }
 
-.header__menuMobile--button:hover {
-    border-radius: var(--button-primary-border-radius);
+.menuMobile__button:hover {
     background-color: var(--border-color-gray);
 }
 
-.header__menuMobile--svg {
+.menuMobile__svg {
     height: 24px;
     width: 24px;
 }

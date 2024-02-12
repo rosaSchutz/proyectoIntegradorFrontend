@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav class="header__navigation">
-            <a href="#" class="header__navigation--links">
+        <nav className={styles.navigation}>
+            <a href="#" className={styles.navigation__links}>
                 <Link to="/">Inicio</Link>
             </a>
-            <a href="#" class="header__navigation--links">
+            <a href="#" className={styles.navigation__links}>
                 Features
             </a>
-            <a href="#" class="header__navigation--links">
+            <a href="#" className={styles.navigation__links}>
                 Marketplace
             </a>
         </nav>
