@@ -10,8 +10,7 @@
 
 @media (min-width: 640px) {
     .main {
-        padding-top: 128px;
-        padding-bottom: 128px;
+        padding: 128px 24px;
     }
 }
 
