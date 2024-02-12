@@ -1,16 +1,9 @@
 import React from "react";
 import SearchButton from "../Components/ui/Buttons/SearchButton";
-import Categoria from "../Components/Categoria";
+import CarouselCategory from "../Components/CarouselCategory";
 import Card from "../Components/Card";
 import PaginationButton from "../Components/ui/Buttons/PaginationButton";
 import "../styles/home.css";
-
-import {
-    Carousel,
-    CarouselContent,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/Components/ui/carousel";
 
 const Home = () => {
     return (
@@ -19,20 +12,7 @@ const Home = () => {
                 <SearchButton />
             </div>
 
-            <Carousel>
-                <CarouselPrevious />
-                <CarouselContent>
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                    <Categoria />
-                </CarouselContent>
-                <CarouselNext />
-            </Carousel>
+            <CarouselCategory />
 
             <article>
                 <section class="main__sectionCard">

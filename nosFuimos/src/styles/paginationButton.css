@@ -1,12 +1,53 @@
 /*Estilos de los botones de paginación*/
-.section__paginationButton {
+.sectionPagination {
     display: flex;
-    align-items: center;
-    height: 40px;
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
 }
 
-.section__paginationButton--numeros {
-    
+.sectionPagination__numeros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #ffffff;
+    font-weight: var(--font-weight-light);
+    color: var(--text-color-gray);
+    padding-left: 16px;
+    padding-right: 16px;
+    line-height: 1.25;
+    border-width: 1px;
+    border-color: var(--border-color-gray);
+}
+
+.sectionPagination__numeros:hover {
+    background-color: var(--border-color-gray);
+    color: var(--text-color-black);
+}
+
+.sectionPagination__flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 40px;
+    line-height: 1.25;
+    color: var(--text-color-gray);
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color: var(--border-color-gray);
+}
+
+.sectionPagination__flecha:hover {
+    background-color: var(--border-color-gray);
+    color: var(--text-color-black);
+}
+
+.flechaDerecha {
+    border-start-end-radius: 8px;
+    border-end-end-radius: 8px;
+}
+
+.flechaIzquierda {
+    border-start-start-radius: 8px;
+    border-end-start-radius: 8px;
 }

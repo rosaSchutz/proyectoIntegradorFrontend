@@ -33,4 +33,7 @@
     --button-primary-border: 1px solid var(--border-color-gray);
     --button-primary-border-radius: 6px;
     --button-primary-padding: 10px 14px;
+
+    /*Oculta la barra de scroll de la pagina*/
+    scrollbar-width: none;
 }

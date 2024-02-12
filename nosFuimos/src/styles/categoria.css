@@ -1,4 +1,22 @@
 /*Estilos del texto e imagen de la categoria*/
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    max-width: 92vw;
+    gap: 30px;
+    align-items: center;
+}
+
+.carousel__category {
+    flex: 0 0 100px;
+    scroll-snap-align: start;
+    text-align: center;
+    padding: 10px;
+}
+
+
 .carousel__carouselItem--categoria {
     display: flex;
     flex-direction: column;
@@ -12,8 +30,8 @@
 }
 
 .carousel__carouselItem--categoriaImg {
-    width: auto;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .carousel__carouselItem--categoriaTexto {
@@ -21,4 +39,14 @@
     line-height: var(--line-height-sm);
     font-weight: var(--font-weight-light);
     text-align: center;
+}
+
+
+/*Estilos boton flecha de las categorias*/
+.carouselButton {
+    background-color: #ffffff;
+    border-radius: 9999px;
+    padding: 8px;
+    border: var(--button-primary-border);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
