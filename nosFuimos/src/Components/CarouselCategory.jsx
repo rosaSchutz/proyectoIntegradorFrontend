@@ -5,12 +5,17 @@ import "../styles/categoria.css";
 const CarouselCategory = () => {
     return (
         <div class="carousel" id="category-carousel">
-            <CarouselCategory />
-            <CarouselCategory />
-            <CarouselCategory />
-            <CarouselCategory />
-            <CarouselCategory />
-            <CarouselCategory />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
+            <Categoria />
         </div>
     );
 };

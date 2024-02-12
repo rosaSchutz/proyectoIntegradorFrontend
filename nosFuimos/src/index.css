@@ -1,39 +1,44 @@
 :root {
-    font-family: 'Nunito Sans', 'Montserrat', sans-serif;
+  font-family: 'Nunito Sans', 'Montserrat', sans-serif;
 
-    /*Colores del texto*/
-    --text-color-gray: #717171;
-    --text-color-blue: #022a3d;
-    --text-color-black: #222222;
+  /*Colores del texto*/
+  --text-color-gray: #717171;
+  --text-color-blue: #022a3d;
+  --text-color-black: #222222;
 
-    /*Colores del borde*/
-    --border-color-gray: #ebebeb;
+  /*Colores del borde*/
+  --border-color-gray: #ebebeb;
 
-    /*Colores de fondo*/
-    --background-color-header: #ffffff;
-    --background-color-footer: #ffffff;
-    --background-color-main: #ffffff;
+  /*Colores de fondo*/
+  --background-color-header: #ffffff;
+  --background-color-footer: #ffffff;
+  --background-color-main: #ffffff;
 
-    /*Styles textos*/
-    --font-size-sm: 14px;
-    --line-height-sm: 20px;
+  /*Styles textos*/
+  --font-size-sm: 14px;
+  --line-height-sm: 20px;
 
-    --font-size-base: 16px;
-    --line-height-base: 24px;
+  --font-size-base: 16px;
+  --line-height-base: 24px;
 
-    --font-size-xl: 20px;
-    --line-height-xl: 28px;
+  --font-size-xl: 20px;
+  --line-height-xl: 28px;
 
-    --font-weight-light: 300;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 
-    /*Styles buttons*/
-    --button-primary-background: #ffffff;
-    --button-primary-border: 1px solid var(--border-color-gray);
-    --button-primary-border-radius: 6px;
-    --button-primary-padding: 10px 14px;
+  /*Styles buttons*/
+  --button-primary-background: #ffffff;
+  --button-primary-border: 1px solid var(--border-color-gray);
+  --button-primary-border-radius: 6px;
+  --button-primary-padding: 10px 14px;
 
-    /*Oculta la barra de scroll de la pagina*/
-    scrollbar-width: none;
+  /*Oculta la barra de scroll de la pagina*/
+  scrollbar-width: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
 }

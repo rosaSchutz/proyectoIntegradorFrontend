@@ -1,8 +1,7 @@
 /*Estilos del footer*/
 #footer {
     background-color: var(--background-color-footer);
-    border-top-width: 1px;
-    border-color: var(--border-color-gray);
+    border: 1px solid var(--border-color-gray);
 }
 
 .footer__container {
