@@ -1,10 +1,11 @@
 import React from "react";
+import "../../../styles/paginationButton.css";
 
 const PaginationButton = () => {
     return (
-        <div>
-            <nav>
-                <ul class="flex items-center -space-x-px h-10 text-base">
+        <article>
+            <section class="section">
+                <ul class="section__paginationButton">
                     <li>
                         <a
                             href="#"
@@ -31,7 +32,7 @@ const PaginationButton = () => {
                     <li>
                         <a
                             href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-[#717171] font-light bg-white border border-[#ebebeb] hover:bg-[#ebebeb] hover:text-gray-700"
+                            class="section__paginationButton--numeros flex items-center justify-center px-4 h-10 leading-tight text-[#717171] font-light bg-white border border-[#ebebeb] hover:bg-[#ebebeb] hover:text-gray-700"
                         >
                             1
                         </a>
@@ -92,8 +93,8 @@ const PaginationButton = () => {
                         </a>
                     </li>
                 </ul>
-            </nav>
-        </div>
+            </section>
+        </article>
     );
 };
 

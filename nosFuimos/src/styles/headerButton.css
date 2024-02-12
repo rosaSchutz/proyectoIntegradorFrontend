@@ -1,0 +1,11 @@
+/*Estilos de los botones del header*/
+.header__auth--buttons {
+    background: var(--button-primary-background);
+    border: var(--button-primary-border);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    border-radius: var(--button-primary-border-radius);
+    padding: var(--button-primary-padding);
+}

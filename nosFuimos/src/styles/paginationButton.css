@@ -1,0 +1,12 @@
+/*Estilos de los botones de paginación*/
+.section__paginationButton {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+.section__paginationButton--numeros {
+    
+}

@@ -32,7 +32,7 @@
 }
 
 /*Estilos menu de logo y titulo*/
-.header__logo{
+.header__logo {
     display: flex;
 }
 
@@ -42,7 +42,7 @@
     }
 }
 
-.header__logo-enlace{
+.header__logo-enlace {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
     font-weight: var(--font-weight-semibold);
@@ -93,17 +93,6 @@
     }
 }
 
-.header__auth--buttons {
-    background: var(--button-primary-background);
-    border: var(--button-primary-border);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    font-weight: var(--font-weight-medium);
-    color: var(--text-color-black);
-    border-radius: var(--button-primary-border-radius);
-    padding: var(--button-primary-padding);
-}
-
 /*Estilos del menu mobile*/
 .header__menuMobile {
     display: flex;
@@ -129,4 +118,3 @@
     height: 24px;
     width: 24px;
 }
-

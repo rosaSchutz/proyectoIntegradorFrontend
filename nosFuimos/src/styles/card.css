@@ -1,0 +1,78 @@
+/*Estilo de la imagen de la tarjeta*/
+.containerCard__containerImage {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--button-primary-border-radius);
+    background-color: var(--border-color-gray);
+}
+
+.containerCard__containerImage:hover {
+    opacity: 0.75;
+}
+
+@media (min-width: 640px) {
+    .containerCard__containerImage {
+        height: 75%;
+    }
+}
+
+.containerCard__containerImage--image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*Estilos de los textos de la tarjeta*/
+.containerCard__containerText {
+    margin-top: 16px;
+}
+
+.containerCard__containerText--containerTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerCard__containerText--title {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color-black);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.containerCard__containerText--svgStart {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.containerCard__containerText--parrafoStart {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+}
+
+.containerCard__containerText--parrafoDetalle {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-light);
+    color: var(--text-color-gray);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.containerCard__containerText--parrafo {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 4px;
+}

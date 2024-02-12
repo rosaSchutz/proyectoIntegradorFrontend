@@ -46,8 +46,8 @@ const Header = () => {
 
                 {/*Menu de login y registro*/}
                 <div class="header__auth">
-                    <HeaderButton title={"Crear cuenta"}/>
-                    <HeaderButton title={"Iniciar sesión"}/>
+                    <HeaderButton title={"Crear cuenta"} />
+                    <HeaderButton title={"Iniciar sesión"} />
                 </div>
             </div>
         </header>

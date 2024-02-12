@@ -1,19 +1,20 @@
 import React from 'react'
+import "../../../styles/searchButton.css"
 
 const SearchButton = () => {
     return (
-        <form class="min-w-[90vw] sm:min-w-[34rem]">
-            <div class="relative">
+        <form class="searchButton">
+            <div class="searchButton__container">
                 <input
                     type="search"
                     id="default-search"
-                    class="block w-full p-3 ps-10 text-sm font-light text-[#717171] border border-[#ebebeb] rounded-full bg-white hover:bg-[#ebebeb] shadow-md focus:bg-white focus:outline-none"
+                    class="searchButton__container--input"
                     placeholder="Explora destinos"
                     required
                 />
                 <button
                     type="submit"
-                    class="text-white absolute end-2.5 bottom-2 bg-[#ebebeb] font-medium rounded-full px-2 py-2"
+                    class="searchButton__container--buttton"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -52,6 +52,25 @@
     }
 }
 
+.footer__copywriting--enlace {
+    display: flex;
+    font-weight: var(--font-weight-semibold);
+    align-items: center;
+    color: var(--text-color-blue);
+}
+
+.footer__copywriting--logo {
+    width: auto;
+    height: 40px;
+}
+
+.footer__copywriting--textoCopywriting {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    font-weight: var(--font-weight-light);
+    color: var(--text-color-gray);
+}
+
 /*Estilos de la seccion de navegation*/
 .footer__navegation {
     display: flex;
