@@ -12,10 +12,9 @@ const Header = () => {
                         <a href="#" className={styles.title}>
                             <img
                                 className={styles.img}
-                                src="/assets/nosFuimos.png"
+                                src="/assets/logo3.png"
                                 alt=""
                             />
-                            nosfuimos
                         </a>
                     </Link>
                 </div>
