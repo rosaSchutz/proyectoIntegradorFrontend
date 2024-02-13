@@ -8,16 +8,16 @@ const Header = () => {
             <div className={styles.header__container}>
                 {/*Logotipo y titulo*/}
                 <div className={styles.logo}>
-                    <a href="#" className={styles.enlace}>
-                        <Link className={styles.title} to="/">
+                    <Link className={styles.enlace} to="/">
+                        <a href="#" className={styles.title}>
                             <img
                                 className={styles.img}
                                 src="../../public/nosFuimos.png"
                                 alt=""
                             />
                             nosfuimos
-                        </Link>
-                    </a>
+                        </a>
+                    </Link>
                 </div>
 
                 {/*Menu mobile*/}
