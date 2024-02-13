@@ -46,16 +46,16 @@ const DetailProduct = () => {
                                 </ul>
                             </nav>
                             <div class="flex mb-4">
-                                <a class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">
+                                <a class="flex-grow text-gray border-b-2 border-gray py-2 text-lg px-1">
                                     Description
                                 </a>
                             </div>
                             <p class="leading-relaxed mb-4">
                                 Fam locavore kickstarter distillery. Mixtape chillwave tumeric
                                 sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo
-                                juiceramps cornhole raw denim forage brooklyn. Everyday carry
-                                +1 seitan poutine tumeric. Gastropub blue bottle austin
-                                listicle pour-over, neutra jean.
+                                juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
+                                seitan poutine tumeric. Gastropub blue bottle austin listicle
+                                pour-over, neutra jean.
                             </p>
                             <div class="flex border-t border-gray-200 py-2">
                                 <span class="text-gray-500">Color</span>
@@ -82,11 +82,11 @@ const DetailProduct = () => {
                 </div>
             </section>
 
-            <section  class="flex gap-6 flex-col">
+            <section class="flex gap-6 flex-col">
                 <div class="mx-auto mt-6 max-w-2xl lg:grid lg:max-w-7xl lg:grid-cols-2 gap-4">
                     <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 mb-4 lg:mb-0">
                         <img
-                            src="../../public/tours.webp"
+                            src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
                             alt="Model wearing plain white basic tee."
                             class="h-full w-full object-cover object-center rounded-lg"
                         />
@@ -94,28 +94,28 @@ const DetailProduct = () => {
                     <div class="lg:grid lg:grid-cols-2 grid grid-cols-2 gap-4">
                         <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                             <img
-                                src="../../public/tours.webp"
+                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
                                 alt="Model wearing plain black basic tee."
                                 class="h-full w-full object-cover object-center"
                             />
                         </div>
                         <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                             <img
-                                src="../../public/tours.webp"
+                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
                                 alt="Model wearing plain gray basic tee."
                                 class="h-full w-full object-cover object-center"
                             />
                         </div>
                         <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                             <img
-                                src="../../public/tours.webp"
+                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
                                 alt="Model wearing plain black basic tee."
                                 class="h-full w-full object-cover object-center"
                             />
                         </div>
                         <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                             <img
-                                src="../../public/tours.webp"
+                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
                                 alt="Model wearing plain gray basic tee."
                                 class="h-full w-full object-cover object-center"
                             />
@@ -123,15 +123,13 @@ const DetailProduct = () => {
                     </div>
                 </div>
 
-                <div class="flex justify-center">
-                <button>
-                    <a href="#" className={styles.details__buttons}>
-                        Ver más
-                    </a>
-                </button>
+                <div class="flex justify-end">
+                    <button>
+                        <a href="#" className={styles.details__buttons}>
+                            Ver más
+                        </a>
+                    </button>
                 </div>
-
-
             </section>
         </article>
     );

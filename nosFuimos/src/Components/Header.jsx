@@ -71,10 +71,10 @@ const Header = () => {
                 {/*Menu de login y registro*/}
                 <div className={styles.header__auth}>
                     <a href="#" className={styles.header__buttons}>
-                        Crear cuenta
+                        <Link to="/register">Crear cuenta</Link>
                     </a>
                     <a href="#" className={styles.header__buttons}>
-                        Iniciar sesión
+                        <Link to="/login">Iniciar sesión</Link>
                     </a>
                 </div>
             </div>
