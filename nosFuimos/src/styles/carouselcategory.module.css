@@ -1,26 +1,49 @@
 /*Estilos del texto e imagen de la categoria*/
 .carousel {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    max-width: 90%;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
-}
-
-@media (min-width: 1536px) {
-    .carousel {
-        max-width: 80%;
-    }
+    justify-content: center;
 }
 
 .carousel__category {
-    flex: 0 0 30%;
-    scroll-snap-align: start;
     text-align: center;
 }
 
+@media (max-width: 549px) {
+    .carousel {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        max-width: 95%;
+        flex-wrap: nowrap;
+        justify-content: normal;
+    }
+
+    .carousel__category {
+        flex: 0 0 50%;
+        scroll-snap-align: start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 1023px) {
+    .carousel {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        max-width: 95%;
+        flex-wrap: nowrap;
+        justify-content: normal;
+    }
+
+    .carousel__category {
+        flex: 0 0 30%;
+        scroll-snap-align: start;
+        flex-wrap: wrap;
+    }
+}
 
 .carouselItem__categoria {
     display: flex;
@@ -30,27 +53,16 @@
     opacity: 1;
 }
 
-.carouselItem__img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.carouselItem__img:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    transform: scale(0.9);
-}
-
-@media (max-width: 639px) {
-    .carouselItem__img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-.carouselItem__text {
+.category__buttons {
+    background: var(--button-primary-background);
+    border: var(--button-primary-border);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    font-weight: var(--font-weight-light);
-    text-align: center;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color-black);
+    border-radius: 9999px;
+    padding: var(--button-primary-padding);
+    text-decoration: none;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    margin: 10px;
 }

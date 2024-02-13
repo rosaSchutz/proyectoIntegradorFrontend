@@ -5,13 +5,9 @@ const Category = () => {
     return (
         <div className={styles.carousel__category}>
             <div className={styles.carouselItem__categoria}>
-                <img
-                    className={styles.carouselItem__img}
-                    src="../../public/tours.webp"
-                    alt=""
-                    srcset=""
-                />
-                <p className={styles.carouselItem__text}>Cartagena en Bocagrande</p>
+                <a href="#" className={styles.category__buttons}>
+                        Buenos aires
+                </a>
             </div>
         </div>
     );

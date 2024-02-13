@@ -18,7 +18,7 @@
 }
 
 /*Estilos del boton atras*/
-.header__buttons {
+.details__buttons {
     background: var(--button-primary-background);
     border: var(--button-primary-border);
     font-size: var(--font-size-sm);
