@@ -1,13 +1,13 @@
 import React from "react";
+import styles from "../styles/login.module.css";
 
 const Login = () => {
     return (
-        <div class="flex h-full flex-col justify-center px-6 py-24 lg:px-8">
-            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img class="mx-auto h-20 w-auto" src="/assets/logo.png" alt="Your Company" />
-                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Iniciar sesión</h2>
+        <article className={styles.container_login}>
+            <div className={styles.login_title}>
+                <img className={styles.login_img} src="/assets/logo.png" alt="" />
+                <h2 className={styles.login_subtitle}>Iniciar sesión</h2>
             </div>
-
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                 <form class="space-y-6" action="#" method="POST">
                     <div>
@@ -31,7 +31,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-        </div>
+        </article>
     );
 };
 
