@@ -9,6 +9,11 @@ const Header = () => {
                 {/*Logotipo y titulo*/}
                 <div className={styles.logo}>
                     <Link className={styles.enlace} to="/">
+                        <img
+                            className={styles.img}
+                            src="../../public/nosFuimos.png"
+                            alt=""
+                        />
                         <a href="#" className={styles.title}>
                             <img
                                 className={styles.img}
