@@ -8,7 +8,7 @@ const Footer = () => {
       <div className={styles.footer__container}>
         <div className={styles.copywriting}>
           <a href="#" className={styles.enlace}>
-            <img className={styles.logo} src="/public/nosfuimosDos.png" alt="" />
+            <img className={styles.logo} src="/assets/nosfuimosDos.png" alt="" />
           </a>
           <p  className={styles.textoCopywriting}>
             ©️ 2024 Nos Fuimos.
