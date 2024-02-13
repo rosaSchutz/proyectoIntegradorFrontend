@@ -9,7 +9,6 @@ const Footer = () => {
         <div className={styles.copywriting}>
           <a href="#" className={styles.enlace}>
             <img className={styles.logo} src="/public/nosfuimosDos.png" alt="" />
-            <img src="/assets/DH.png" alt="DH-logo" width={300}/>
           </a>
           <p  className={styles.textoCopywriting}>
             ©️ 2024 Nos Fuimos.
