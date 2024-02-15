@@ -42,18 +42,8 @@
 }
 
 .enlace {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xl);
-    font-weight: var(--font-weight-semibold);
-    color: var(--text-color-blue);
-    text-decoration: none;
-}
-
-.title {
     display: flex;
-    gap: 6px;
-    color: var(--text-color-blue);
-    text-decoration: none;
+    align-items: center;
 }
 
 .img {

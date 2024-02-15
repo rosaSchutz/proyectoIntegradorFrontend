@@ -9,13 +9,11 @@ const Header = () => {
                 {/*Logotipo y titulo*/}
                 <div className={styles.logo}>
                     <Link className={styles.enlace} to="/">
-                        <a href="#" className={styles.title}>
                             <img
                                 className={styles.img}
                                 src="/assets/logo3.png"
                                 alt=""
                             />
-                        </a>
                     </Link>
                 </div>
 
@@ -47,12 +45,8 @@ const Header = () => {
 
                         <nav className={styles.menu}>
                             <div className={styles.menuFlex}>
-                                <a href="#" className={styles.header__buttons}>
-                                    Ingreso
-                                </a>
-                                <a href="#" className={styles.header__buttons}>
-                                    Registro
-                                </a>
+                                <Link to="/login" className={styles.header__buttons}>Ingreso</Link>
+                                <Link to="/register" className={styles.header__buttons}>Registro</Link>
                             </div>
                         </nav>
                     </button>
@@ -61,20 +55,14 @@ const Header = () => {
                 {/*Menu de navegacion*/}
                 {/*
                     <nav className={styles.navigation}>
-                        <a href="#" className={styles.navigation__links}>
-                            <Link to="/">Inicio</Link>
-                        </a>
+                        <Link to="/" className={styles.navigation__links}>Inicio</Link>
                     </nav>
                 */}
 
                 {/*Menu de login y registro*/}
                 <div className={styles.header__auth}>
-                    <a href="#" className={styles.header__buttons}>
-                        <Link to="/register">Crear cuenta</Link>
-                    </a>
-                    <a href="#" className={styles.header__buttons}>
-                        <Link to="/login">Iniciar sesión</Link>
-                    </a>
+                    <Link to="/register" className={styles.header__buttons}>Crear cuenta</Link>
+                    <Link to="/login" className={styles.header__buttons}>Iniciar sesión</Link>
                 </div>
             </div>
         </header>

@@ -16,9 +16,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.navegation}>
-          <a href="#" className={styles.navegation__enlace}>
-            <Link to="/">Inicio</Link>
-          </a>
+          <Link to="/" className={styles.navegation__enlace}>Inicio</Link>
         </div>
       </div>
     </footer>

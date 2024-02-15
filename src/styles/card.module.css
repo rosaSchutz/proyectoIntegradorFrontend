@@ -3,7 +3,7 @@
     width: 100%;
     overflow: hidden;
     border-radius: var(--button-primary-border-radius);
-    background-color: var(--border-color-gray);
+    background-color: #ffffff;
     height: 65%;
 }
 
@@ -22,6 +22,7 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: var(--button-primary-border-radius);
 }
 
 /*Estilos de los textos de la tarjeta*/

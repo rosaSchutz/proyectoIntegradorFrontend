@@ -76,10 +76,6 @@
 }
 
 .navegation__enlace {
-    text-decoration: none;
-}
-
-.navegation__enlace a{
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     font-weight: var(--font-weight-light);
