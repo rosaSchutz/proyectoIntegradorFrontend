@@ -114,6 +114,8 @@
 
 .button {
     color: rgb(156 163 175);
+    border: none;
+    background-color: white;
 }
 
 .button:hover {
