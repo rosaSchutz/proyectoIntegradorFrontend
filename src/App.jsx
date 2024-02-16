@@ -19,7 +19,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/product/:id' element={<DetailProduct />} />
         <Route path='/gallery' element={<GalleryImages />} />
-        <Route path='/administration' element={<Administration />} />
+        <Route path='/administracion' element={<Administration />} />
       </Routes>
       <Footer />
     </>
