@@ -1,0 +1,21 @@
+.form {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background-color: var(--background-color-main);
+    padding: 96px 16px;
+    gap: 30px;
+}
+
+@media (min-width: 640px) {
+    .form {
+        padding: 128px 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}

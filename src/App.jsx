@@ -7,6 +7,7 @@ import Register from './Routes/Register';
 import DetailProduct from './Routes/DetailProduct';
 import GalleryImages from './Routes/GalleryImages';
 import Administration from './Routes/Administration';
+import AddProduct from './Routes/AddProduct';
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/product/:id' element={<DetailProduct />} />
         <Route path='/gallery' element={<GalleryImages />} />
         <Route path='/administracion' element={<Administration />} />
+        <Route path='/addProduct' element={<AddProduct />} />
       </Routes>
       <Footer />
     </>
