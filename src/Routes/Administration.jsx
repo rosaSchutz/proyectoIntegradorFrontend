@@ -6,7 +6,6 @@ const Administration = () => {
   return (
     <div>
       <aside class="flex flex-col w-64 h-screen px-5 py-20 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
-
         <div class="flex flex-col justify-between flex-1 mt-6">
           <nav class="-mx-3 space-y-6 ">
             <div class="space-y-3 ">
@@ -29,7 +28,6 @@ const Administration = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>                  <span class="mx-2 text-sm font-medium">Eliminar producto</span>
               </Link>
             </div>
-
             <div class="space-y-3 ">
               <label class="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">Categorias</label>
 
