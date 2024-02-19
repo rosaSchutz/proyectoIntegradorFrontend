@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
-//import { useContextGlobalRegisterProduct } from "../Components/utils/registerProduct.context";
+//import { useFecth } from "../Components/utils/useFetch";
 import { Link } from "react-router-dom";
 import Administration from "./Administration";
 import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
+    //const { data } = useFecth("https://jsonplaceholder.typicode.com/posts");
     const url = "https://jsonplaceholder.typicode.com/posts";
     const guardar = useRef(null);
 
