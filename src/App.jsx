@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header";
 import Home from './Routes/Home';
 import Footer from "./Components/Footer";
@@ -21,7 +22,7 @@ function App() {
         <Route path='/product/:id' element={<DetailProduct />} />
         <Route path='/gallery' element={<GalleryImages />} />
         <Route path='/administracion' element={<Administration />} />
-        <Route path='/addProduct' element={<AddProduct />} />
+        <Route path='/administracion/addProduct' element={<AddProduct />} />
       </Routes>
       <Footer />
     </>
