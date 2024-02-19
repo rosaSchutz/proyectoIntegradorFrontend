@@ -2,14 +2,14 @@ import React from "react";
 import styles from "../styles/card.module.css"
 import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = ({ id, title, url }) => {
     return (
         <div>
-            <Link className="card-a" to={"/product/20"}>
+            <Link to={"/product/" + id}>
                 <div className={styles.containerCard}>
                     <div className={styles.containerImage}>
                         <img
-                            src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                            src={url}
                             alt=""
                             className={styles.image}
                         />
@@ -17,7 +17,7 @@ const Card = () => {
                     <div className={styles.containerText}>
                         <div className={styles.containerTitle}>
                             <h3 className={styles.title}>
-                                La Calera, Colombia
+                                {title}
                             </h3>
                             <div className={styles.svgStart}>
                                 <svg

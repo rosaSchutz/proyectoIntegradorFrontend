@@ -20,10 +20,14 @@ const Home = () => {
 
             <article>
                 <section className={styles.main__sectionCard}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {state.data.map((info) => (
+                        <Card
+                            key={info.id}
+                            id={info.id}
+                            title={info.title}
+                            url={info.url}
+                        />
+                    ))}
                 </section>
             </article>
 
