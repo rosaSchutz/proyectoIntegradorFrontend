@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 //import { useContextGlobalRegisterProduct } from "../Components/utils/registerProduct.context";
 import { Link } from "react-router-dom";
 import Administration from "./Administration";
@@ -6,11 +6,18 @@ import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
-    //const formulario = document.getElementById("crearProductoForm");
-    const botonCrearProducto = document.getElementById("guardar");
+    const guardar = useRef(null);
 
-    botonCrearProducto.addEventListener("click", async function (event) {
+    useEffect(() => {
+        guardar.current.addEventListener("click", handleClick);
+        return () => {
+            guardar.current.removeEventListener("click", handleClick);
+        };
+    }, []);
+
+    const handleClick = async (event) => {
         event.preventDefault();
+
         const title = document.getElementById("nameProduct").value;
         const body = document.getElementById("destino").value;
         const userId = 1;
@@ -39,12 +46,14 @@ const AddProduct = () => {
 
             const data = await response.json();
             console.log("Producto agregado exitosamente:", data);
-            
+
             //formulario.reset();
         } catch (error) {
             console.error("Error al agregar producto:", error);
         }
-    });
+    };
+
+    
 
     return (
         <div class="flex">
@@ -186,7 +195,7 @@ const AddProduct = () => {
                         <Link to="/administracion">Cancelar</Link>
                     </button>
                     <button
-                        id="guardar"
+                        ref={guardar}
                         type="submit"
                         class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
