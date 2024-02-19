@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
 
-export function useFecth (url, method) {
+export function useFetch(url) {
     const [data, setData] = useState(null);
 
-    useEffect(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    const fetchData = async (product) => {
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(product),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            });
+            const result = await response.json();
+            setData(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
-    return { data };
+    useEffect(() => {
+        fetchData();
+    }, [url]);
+
+    return { data, fetchData };
 }

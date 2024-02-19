@@ -1,12 +1,13 @@
 import React, { useRef, useEffect } from "react";
-//import { useFecth } from "../Components/utils/useFetch";
+import { useFetch } from "../Components/utils/useFetch";
 import { Link } from "react-router-dom";
 import Administration from "./Administration";
 import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
-    //const { data } = useFecth("https://jsonplaceholder.typicode.com/posts");
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const { data, fetchData } = useFetch("https://jsonplaceholder.typicode.com/posts");
+    console.log("Data product:", data);
+
     const guardar = useRef(null);
 
     useEffect(() => {
@@ -16,45 +17,22 @@ const AddProduct = () => {
         };
     }, []);
 
-    const handleClick = async (event) => {
+
+    const handleClick = (event) => {
         event.preventDefault();
 
         const title = document.getElementById("nameProduct").value;
         const body = document.getElementById("destino").value;
         const userId = 1;
-
-        const nuevoProducto = {
+    
+        const product = {
             title,
             body,
             userId,
         };
 
-        const settings = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-            },
-            body: JSON.stringify(nuevoProducto),
-        };
-
-        try {
-            // Enviar la solicitud POST
-            const response = await fetch(url, settings);
-
-            if (!response.ok) {
-                throw new Error(`Error de HTTP: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log("Producto agregado exitosamente:", data);
-
-            //formulario.reset();
-        } catch (error) {
-            console.error("Error al agregar producto:", error);
-        }
+        fetchData(product);
     };
-
-    
 
     return (
         <div class="flex">
