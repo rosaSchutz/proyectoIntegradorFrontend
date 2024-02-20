@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import styles from "../styles/detailProduct.module.css";
 
 const DetailProduct = () => {
+    const { id } = useParams();
     return (
         <article className={styles.article}>
             <section className={styles.info}>
@@ -11,7 +13,7 @@ const DetailProduct = () => {
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </h2>
                     <div className={styles.title_back}>
-                        <a href="#" className={styles.details__buttons}>
+                        <Link to="/" className={styles.details__buttons}>
                             <svg
                                 width="24"
                                 height="24"
@@ -28,7 +30,7 @@ const DetailProduct = () => {
                                 <path d="M5 12l4 -4" />
                             </svg>
                             <span className={styles.details__buttons_title}>Volver</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -108,7 +110,7 @@ const DetailProduct = () => {
 
                 <div className={styles.more}>
                     <button className={styles.button}>
-                        <Link to="/gallery" className={styles.details__buttons}>Ver más</Link>
+                        <Link to={"/product/" + id + "/gallery"} className={styles.details__buttons}>Ver más</Link>
                     </button>
                 </div>
             </section>

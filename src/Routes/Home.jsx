@@ -20,7 +20,7 @@ const Home = () => {
 
             <article>
                 <section className={styles.main__sectionCard}>
-                    {state.data.map((info) => (
+                    {state.data.slice(0, 10).map((info) => (
                         <Card
                             key={info.id}
                             id={info.id}

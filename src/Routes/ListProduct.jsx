@@ -25,6 +25,18 @@ const ListProduct = () => {
         };
     }, []);
 
+    const eliminarProducto = () => {
+        const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar este producto?");
+
+        if (confirmDelete) {
+            // Lógica para eliminar el producto
+            alert("Producto eliminado");
+        } else {
+            // Lógica si el usuario cancela la eliminación
+
+        }
+    };
+
     return (
         <>
             {isMobile ? (
@@ -144,7 +156,7 @@ const ListProduct = () => {
                                                                 </div>
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                <button class="flex items-center gap-2 text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
+                                                                <button onClick={() => eliminarProducto()} class="flex items-center gap-2 text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
                                                                     <svg
                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                         class="icon icon-tabler icon-tabler-trash"

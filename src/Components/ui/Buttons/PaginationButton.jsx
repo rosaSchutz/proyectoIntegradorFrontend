@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../../styles/paginationButton.module.css";
 
 const PaginationButton = () => {
+    
     return (
         <article className={styles.articlePagination}>
             <section className={styles.sectionPagination}>

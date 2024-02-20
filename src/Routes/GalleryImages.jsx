@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import styles from "../styles/galleryImages.module.css";
 
 const GalleryImages = () => {
+    const { id } = useParams();
     return (
         <div className={styles.gallery}>
                 <div className={styles.galleryDiv1}>
                     <div className={styles.galleryDiv2}>
                         <div className={styles.galleryDiv3}>
-                            <Link to="/product/20">
+                            <Link to={"/product/" + id}>
                             <button
                                 type="button"
                                 className={styles.button}

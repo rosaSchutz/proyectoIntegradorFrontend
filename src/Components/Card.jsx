@@ -6,6 +6,7 @@ const Card = ({ id, title, url }) => {
     return (
         <div>
             <Link to={"/product/" + id}>
+                
                 <div className={styles.containerCard}>
                     <div className={styles.containerImage}>
                         <img
