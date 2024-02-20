@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useFetch } from "../Components/utils/useFetch";
+import { useFetchPost } from "../Components/utils/useFetchPost";
 import { Link } from "react-router-dom";
 import Administration from "./Administration";
 import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
-    const { data, fetchData } = useFetch(
+    const { data, fetchData } = useFetchPost(
         "https://jsonplaceholder.typicode.com/posts"
     );
     console.log("Data product:", data);

@@ -1,23 +1,23 @@
-.form {
+/*Estilos de la seccion de articleList del home*/
+.articleList {
     display: grid;
     height: 100%;
     place-items: center;
-    background-color: var(--background-color-main);
+    background-color: var(--background-color-articleList);
     padding: 96px 16px;
     gap: 30px;
-    width: 100%;
     overflow-x: scroll;
     max-height: 100vh;
 }
 
 @media (min-width: 640px) {
-    .form {
+    .articleList {
         padding: 128px 24px;
     }
 }
 
 @media (min-width: 1024px) {
-    .form {
+    .articleList {
         padding-left: 64px;
         padding-right: 64px;
     }
