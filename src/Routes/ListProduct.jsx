@@ -123,7 +123,7 @@ const ListProduct = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                                                    {data?.map((product) => (
+                                                    {data?.slice(0, 20).map((product) => (
                                                         <tr>
                                                             <td
                                                                 key={product.id}

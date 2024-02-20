@@ -51,30 +51,6 @@
     width: auto;
 }
 
-/*Estilos menu de navegacion*/
-.navigation {
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .navigation {
-        display: flex;
-        gap: 48px;
-    }
-}
-
-.navigation__links {
-    text-decoration: none;
-}
-
-.navigation__links a {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    font-weight: var(--font-weight-light);
-    color: var(--text-color-gray);
-    text-decoration: none;
-}
-
 /*Estilos menu de login y registro*/
 .header__auth {
     display: none;

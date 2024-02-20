@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import { useFetchGetID } from "../Components/utils/useFetchGetID";
 import styles from "../styles/detailProduct.module.css";
 
-const DetailProduct = () => {
+const DetailProduct = ({ url }) => {
     const { id } = useParams();
+    const { data } = useFetchGetID(
+        "https://jsonplaceholder.typicode.com/photos/"+id
+    );
+
+    console.log(data)
+
     return (
         <article className={styles.article}>
             <section className={styles.info}>
@@ -71,7 +78,7 @@ const DetailProduct = () => {
                 <div className={styles.galleryContainer}>
                     <div className={styles.leftContainer}>
                         <img
-                            src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                            src={data?.url}
                             alt=""
                             className={styles.leftImg}
                         />
@@ -79,28 +86,28 @@ const DetailProduct = () => {
                     <div className={styles.rightContainer}>
                         <div className={styles.rightDiv}>
                             <img
-                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                                src={data?.url}
                                 alt=""
                                 className={styles.rightImg}
                             />
                         </div>
                         <div className={styles.rightDiv}>
                             <img
-                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                                src={data?.url}
                                 alt=""
                                 className={styles.rightImg}
                             />
                         </div>
                         <div className={styles.rightDiv}>
                             <img
-                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                                src={data?.url}
                                 alt=""
                                 className={styles.rightImg}
                             />
                         </div>
                         <div className={styles.rightDiv}>
                             <img
-                                src="https://a0.muscache.com/im/pictures/miso/Hosting-51634704/original/5823a587-5ba8-4b25-af8a-dbcfa13cbde1.jpeg?im_w=720"
+                                src={data?.url}
                                 alt=""
                                 className={styles.rightImg}
                             />

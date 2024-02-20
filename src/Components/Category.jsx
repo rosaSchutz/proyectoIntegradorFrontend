@@ -6,7 +6,7 @@ const Category = () => {
         <div className={styles.carousel__category}>
             <div className={styles.carouselItem__categoria}>
                 <a href="#" className={styles.category__buttons}>
-                        Buenos aires
+                        Categorias
                 </a>
             </div>
         </div>

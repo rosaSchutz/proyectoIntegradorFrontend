@@ -1,20 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import { useFetchGetID } from "../Components/utils/useFetchGetID";
 import styles from "../styles/galleryImages.module.css";
 
 const GalleryImages = () => {
     const { id } = useParams();
+    const { data } = useFetchGetID(
+        "https://jsonplaceholder.typicode.com/photos/" + id
+    );
+    console.log(data)
+
     return (
         <div className={styles.gallery}>
-                <div className={styles.galleryDiv1}>
-                    <div className={styles.galleryDiv2}>
-                        <div className={styles.galleryDiv3}>
-                            <Link to={"/product/" + id}>
+            <div className={styles.galleryDiv1}>
+                <div className={styles.galleryDiv2}>
+                    <div className={styles.galleryDiv3}>
+                        <Link to={"/product/" + id}>
                             <button
                                 type="button"
                                 className={styles.button}
-                            >   
+                            >
                                 <svg
                                     className={styles.close}
                                     fill="none"
@@ -30,83 +36,42 @@ const GalleryImages = () => {
                                     />
                                 </svg>
                             </button>
-                            </Link>
-                            <div className={styles.containerImg}>
+                        </Link>
+                        <div className={styles.containerImg}>
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
                                 <img
                                     className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
+                                    src={data?.url}
                                     alt=""
                                 />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg"
-                                    alt=""
-                                />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg"
-                                    alt=""
-                                />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg"
-                                    alt=""
-                                />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg"
-                                    alt=""
-                                />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
-                                    alt=""
-                                />
-
-                                <img
-                                    className={styles.img}
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
-                                    alt=""
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     );
 };

@@ -44,9 +44,9 @@
 .searchButton__buttton {
     color: #ffffff;
     position: absolute;
-    background-color: var(--border-color-gray);
+    background-color: gray;
     border: none;
-    padding: 8px;
+    padding: 8px 10px;
     bottom: 8px;
     inset-inline-end: 10px;
     width: 34px;

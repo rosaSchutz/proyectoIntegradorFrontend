@@ -52,13 +52,6 @@ const Header = () => {
                     </button>
                 </div>
 
-                {/*Menu de navegacion*/}
-                {/*
-                    <nav className={styles.navigation}>
-                        <Link to="/" className={styles.navigation__links}>Inicio</Link>
-                    </nav>
-                */}
-
                 {/*Menu de login y registro*/}
                 <div className={styles.header__auth}>
                     <Link to="/register" className={styles.header__buttons}>Crear cuenta</Link>
