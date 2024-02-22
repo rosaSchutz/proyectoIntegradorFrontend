@@ -10,6 +10,17 @@ const Home = () => {
     const { state } = useContextGlobal();
     console.log("Data home:", state.data);
 
+    //algoritmo de Fisher-Yates para barajar aleatoriamente un array
+    const aleatorio = (array) => {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    };
+
+    const aleatorioProducts = aleatorio(state.data);
+
     return (
         <main className={styles.main}>
             <div className={styles.main__searchButton}>
@@ -20,7 +31,7 @@ const Home = () => {
 
             <article>
                 <section className={styles.main__sectionCard}>
-                    {state.data.slice(0, 10).map((product) => (
+                    {aleatorioProducts.slice(0, 10).map((product) => (
                         <Card
                             key={product.id}
                             id={product.id}

@@ -17,7 +17,6 @@ const SearchButton = () => {
                     className={styles.searchButton__buttton}
                 >
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
                         height="16"
                         width="16"
                         viewBox="0 0 512 512"

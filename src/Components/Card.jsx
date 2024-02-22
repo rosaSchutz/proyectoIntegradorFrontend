@@ -10,7 +10,7 @@ const Card = ({ id, nombre, destino, salidaDate, vueltaDate, precio, urlImagenes
                 <div className={styles.containerCard}>
                     <div className={styles.containerImage}>
                         <img
-                            src={urlImagenes[0]}
+                            src={"data:image;base64," + urlImagenes[0]}
                             alt=""
                             className={styles.image}
                         />

@@ -4,7 +4,7 @@ export function useFetchUpdate(url) {
     const [data, setData] = useState(null);
 
     //'https://jsonplaceholder.typicode.com/posts/1'
-    
+
     useEffect(() => {
         fetch(url, {
             method: 'PUT',

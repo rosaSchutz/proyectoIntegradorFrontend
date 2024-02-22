@@ -134,9 +134,8 @@ const ListProduct = () => {
                                                 </thead>
                                                 <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                                     {data?.map((product) => (
-                                                        <tr>
+                                                        <tr key={product.id}>
                                                             <td
-                                                                key={product.id}
                                                                 class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"
                                                             >
                                                                 {product.id}
@@ -168,16 +167,15 @@ const ListProduct = () => {
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                                 <button onClick={() => eliminarProducto(product.id)} class="flex items-center gap-2 text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
                                                                     <svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
                                                                         class="icon icon-tabler icon-tabler-trash"
                                                                         width="24"
                                                                         height="24"
                                                                         viewBox="0 0 24 24"
-                                                                        stroke-width="1.5"
+                                                                        strokeWidth="1.5"
                                                                         stroke="currentColor"
                                                                         fill="none"
-                                                                        stroke-linecap="round"
-                                                                        stroke-linejoin="round"
+                                                                        strokeLinecap="round"
+                                                                        strokeLinejoin="round"
                                                                     >
                                                                         <path
                                                                             stroke="none"

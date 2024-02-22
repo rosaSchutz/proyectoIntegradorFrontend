@@ -10,6 +10,7 @@ import GalleryImages from './Routes/GalleryImages';
 import Administration from './Routes/Administration';
 import AddProduct from './Routes/AddProduct';
 import ListProduct from './Routes/ListProduct';
+import NotFound from './Routes/NotFound';
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path='*' element={<NotFound/>} />
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />

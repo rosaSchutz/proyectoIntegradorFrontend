@@ -11,7 +11,7 @@ const Register = () => {
             <div className={styles.containerForm}>
                 <form className={styles.input_form} action="#" method="POST">
                     <div>
-                        <label for="email" className={styles.input_label}>Email</label>
+                        <label htmlFor="email" className={styles.input_label}>Email</label>
                         <div className={styles.div}>
                             <input id="email" name="email" type="email" autocomplete="email" required className={styles.input} />
                         </div>
@@ -19,7 +19,7 @@ const Register = () => {
 
                     <div>
                         <div className={styles.div_password}>
-                            <label for="password" className={styles.input_label}>Contraseña</label>
+                            <label htmlFor="password" className={styles.input_label}>Contraseña</label>
                         </div>
                         <div className={styles.div}>
                             <input id="password" name="password" type="password" autocomplete="current-password" required className={styles.input} />

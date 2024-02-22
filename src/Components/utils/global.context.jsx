@@ -15,15 +15,6 @@ const initialState = {
     data: [],
 }
 
-//algoritmo de Fisher-Yates para barajar aleatoriamente un array
-const aleatorio = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-};
-
 const ContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -31,11 +22,7 @@ const ContextProvider = ({ children }) => {
 
     useEffect(() => {
         axios(url)
-            .then(res => {
-                // Se usa el algoritmo para mostrar aleatoriamente los productos
-                const aleatorioProducts = aleatorio(res.data);
-                dispatch({ type: 'GET_DATA', payload: aleatorioProducts });
-            })
+            .then(res => dispatch({ type: 'GET_DATA', payload: res.data }))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
