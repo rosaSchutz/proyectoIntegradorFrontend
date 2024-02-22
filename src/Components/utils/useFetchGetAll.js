@@ -7,7 +7,7 @@ export function useFetchGetAll(url) {
         fetch(url)
             .then((response) => response.json())
             .then((data) => setData(data))
-    })
+    });
 
     return { data };
 }

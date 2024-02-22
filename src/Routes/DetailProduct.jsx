@@ -4,12 +4,11 @@ import { useParams } from 'react-router-dom';
 import { useFetchGetID } from "../Components/utils/useFetchGetID";
 import styles from "../styles/detailProduct.module.css";
 
-const DetailProduct = ({ url }) => {
+const DetailProduct = () => {
     const { id } = useParams();
     const { data } = useFetchGetID(
-        "https://jsonplaceholder.typicode.com/photos/"+id
+        "http://localhost:8080/admin/productos/" + id
     );
-
     console.log(data)
 
     return (
@@ -17,7 +16,7 @@ const DetailProduct = ({ url }) => {
             <section className={styles.info}>
                 <div className={styles.title}>
                     <h2 className={styles.title_h2}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        {data?.nombre}
                     </h2>
                     <div className={styles.title_back}>
                         <Link to="/" className={styles.details__buttons}>
@@ -41,35 +40,27 @@ const DetailProduct = ({ url }) => {
                     </div>
                 </div>
 
-                <h3 className={styles.description}>
-                    Description
-                </h3>
-
-                <p className={styles.description_p}>
-                    Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-                    sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo
-                    juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-                    seitan poutine tumeric. Gastropub blue bottle austin listicle
-                    pour-over, neutra jean.
-                </p>
+                <hr />
                 <div className={styles.description_property}>
-                    <span className={styles.span1}>Color</span>
-                    <span className={styles.span2}>Blue</span>
+                    <span className={styles.span1}>Destino</span>
+                    <span className={styles.span2}>{data?.destino}</span>
                 </div>
+                <hr />
                 <div className={styles.description_property}>
-                    <span className={styles.span1}>Size</span>
-                    <span className={styles.span2}>Medium</span>
+                    <span className={styles.span1}>Fecha de salida</span>
+                    <span className={styles.span2}>{data?.salidaDate}</span>
                 </div>
+                <hr />
                 <div className={styles.description_property2}>
-                    <span className={styles.span1}>Quantity</span>
-                    <span className={styles.span2}>4</span>
+                    <span className={styles.span1}>Fecha de regreso</span>
+                    <span className={styles.span2}>{data?.vueltaDate}</span>
                 </div>
                 <div className={styles.price}>
                     <span className={styles.span3}>
-                        $58.00
+                        {data?.precio} USD
                     </span>
                     <a href="#" className={styles.details__buttons}>
-                        Button
+                        Contactá a un vendedor
                     </a>
                 </div>
             </section>
@@ -78,40 +69,21 @@ const DetailProduct = ({ url }) => {
                 <div className={styles.galleryContainer}>
                     <div className={styles.leftContainer}>
                         <img
-                            src={data?.url}
+                            src={"data:image/jpeg;base64," + data?.urlImagenes[0]}
                             alt=""
                             className={styles.leftImg}
                         />
                     </div>
                     <div className={styles.rightContainer}>
-                        <div className={styles.rightDiv}>
-                            <img
-                                src={data?.url}
-                                alt=""
-                                className={styles.rightImg}
-                            />
-                        </div>
-                        <div className={styles.rightDiv}>
-                            <img
-                                src={data?.url}
-                                alt=""
-                                className={styles.rightImg}
-                            />
-                        </div>
-                        <div className={styles.rightDiv}>
-                            <img
-                                src={data?.url}
-                                alt=""
-                                className={styles.rightImg}
-                            />
-                        </div>
-                        <div className={styles.rightDiv}>
-                            <img
-                                src={data?.url}
-                                alt=""
-                                className={styles.rightImg}
-                            />
-                        </div>
+                        {data?.urlImagenes.slice(1,5).map((imagenes) => (
+                            <div className={styles.rightDiv}>
+                                <img
+                                    src={"data:image;base64," + imagenes}
+                                    alt=""
+                                    className={styles.rightImg}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
 

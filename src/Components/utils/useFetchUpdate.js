@@ -19,7 +19,7 @@ export function useFetchUpdate(url) {
         })
             .then((response) => response.json())
             .then((data) => setData(data))
-    })
+    }, []);
 
     return { data };
 }

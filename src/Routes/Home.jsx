@@ -20,12 +20,16 @@ const Home = () => {
 
             <article>
                 <section className={styles.main__sectionCard}>
-                    {state.data.slice(0, 10).map((info) => (
+                    {state.data.slice(0, 10).map((product) => (
                         <Card
-                            key={info.id}
-                            id={info.id}
-                            title={info.title}
-                            url={info.url}
+                            key={product.id}
+                            id={product.id}
+                            nombre={product.nombre}
+                            destino={product.destino}
+                            salidaDate={product.salidaDate}
+                            vueltaDate={product.vueltaDate}
+                            precio={product.precio}
+                            urlImagenes={product.urlImagenes}
                         />
                     ))}
                 </section>

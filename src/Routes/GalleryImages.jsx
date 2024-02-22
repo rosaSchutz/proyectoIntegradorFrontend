@@ -7,7 +7,7 @@ import styles from "../styles/galleryImages.module.css";
 const GalleryImages = () => {
     const { id } = useParams();
     const { data } = useFetchGetID(
-        "https://jsonplaceholder.typicode.com/photos/" + id
+        "http://localhost:8080/admin/productos/" + id
     );
     console.log(data)
 
@@ -38,36 +38,13 @@ const GalleryImages = () => {
                             </button>
                         </Link>
                         <div className={styles.containerImg}>
+                            {data?.urlImagenes.map((imagenes) => (
                                 <img
                                     className={styles.img}
-                                    src={data?.url}
+                                    src={"data:image;base64," + imagenes}
                                     alt=""
                                 />
-                                <img
-                                    className={styles.img}
-                                    src={data?.url}
-                                    alt=""
-                                />
-                                <img
-                                    className={styles.img}
-                                    src={data?.url}
-                                    alt=""
-                                />
-                                <img
-                                    className={styles.img}
-                                    src={data?.url}
-                                    alt=""
-                                />
-                                <img
-                                    className={styles.img}
-                                    src={data?.url}
-                                    alt=""
-                                />
-                                <img
-                                    className={styles.img}
-                                    src={data?.url}
-                                    alt=""
-                                />
+                            ))}
                         </div>
                     </div>
                 </div>

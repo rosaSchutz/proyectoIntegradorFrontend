@@ -1,41 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { useFetchGetAll } from "../Components/utils/useFetchGetAll";
+import { useMediaQuery } from 'react-responsive';
 import Administration from "./Administration";
+import Swal from 'sweetalert2';
 import styles from "../styles/listProduct.module.css";
 
 const ListProduct = () => {
     const { data } = useFetchGetAll(
-        "https://jsonplaceholder.typicode.com/photos"
+        "http://localhost:8080/admin/productos"
     );
 
-    // Si se ingresar al panel desde un dispositivo móvil, muestra un mensaje que no está disponible.
-    const [isMobile, setIsMobile] = useState(false);
+    const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 640); // Puedes ajustar el valor según tus necesidades
-        };
+    const eliminarProducto = async (productId) => {
+        try {
+            const result = await Swal.fire({
+                title: "Deseas eliminar el producto?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#5ba8d4",
+                cancelButtonColor: "#01284d",
+                color: "#01284d",
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar'
+            });
 
-        handleResize(); // Verificar el tamaño inicial al cargar la página
+            if (result.isConfirmed) {
+                const url = `http://localhost:8080/admin/productos/${productId}`;
+                await fetch(url, {
+                    method: 'DELETE',
+                });
 
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
-    const eliminarProducto = () => {
-        const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar este producto?");
-
-        if (confirmDelete) {
-            // Lógica para eliminar el producto
-            alert("Producto eliminado");
-        } else {
-            // Lógica si el usuario cancela la eliminación
-
+                Swal.fire({
+                    title: "Eliminado!",
+                    text: "Su producto ha sido eliminado exitosamente.",
+                    icon: "success",
+                    color: "#01284d",
+                    confirmButtonColor: "#5ba8d4",
+                });
+            }
+        } catch (error) {
+            console.error('Error al eliminar el producto:', error);
+            // Manejar errores, si es necesario
         }
     };
+
+
 
     return (
         <>
@@ -123,7 +133,7 @@ const ListProduct = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                                                    {data?.slice(0, 20).map((product) => (
+                                                    {data?.map((product) => (
                                                         <tr>
                                                             <td
                                                                 key={product.id}
@@ -132,31 +142,31 @@ const ListProduct = () => {
                                                                 {product.id}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap truncate">
-                                                                Nombre del producto
+                                                                {product.nombre}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                descripcion destino
+                                                                {product.destino}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                01/01/2024
+                                                                {product.salidaDate}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                01/01/2024
+                                                                {product.vueltaDate}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                $20.000
+                                                                {product.precio}
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                                 <div class="flex items-center gap-x-2">
                                                                     <img
                                                                         class="object-cover w-8 h-8 rounded-full"
-                                                                        src={product.url}
+                                                                        src={"data:image;base64," + product.urlImagenes[0]}
                                                                         alt=""
                                                                     />
                                                                 </div>
                                                             </td>
                                                             <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                                <button onClick={() => eliminarProducto()} class="flex items-center gap-2 text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
+                                                                <button onClick={() => eliminarProducto(product.id)} class="flex items-center gap-2 text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
                                                                     <svg
                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                         class="icon icon-tabler icon-tabler-trash"
@@ -180,7 +190,6 @@ const ListProduct = () => {
                                                                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
                                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                                     </svg>
-                                                                    Eliminar producto
                                                                 </button>
                                                             </td>
                                                         </tr>

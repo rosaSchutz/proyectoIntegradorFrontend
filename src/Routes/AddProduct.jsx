@@ -1,14 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFetchPost } from "../Components/utils/useFetchPost";
-import { Link } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 import Administration from "./Administration";
 import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
     const { data, fetchData } = useFetchPost(
-        "https://jsonplaceholder.typicode.com/posts"
+        "http://localhost:8080/admin/productos/guardar"
     );
     console.log("Data product:", data);
+
+    const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
     const guardar = useRef(null);
 
@@ -19,38 +21,50 @@ const AddProduct = () => {
         };
     }, []);
 
-    const handleClick = (event) => {
+    const handleClick = async (event) => {
         event.preventDefault();
 
-        const title = document.getElementById("nameProduct").value;
-        const body = document.getElementById("destino").value;
-        const userId = 1;
+        const nombre = document.getElementById("nameProduct").value;
+        const destino = document.getElementById("destino").value;
+        const salidaDate = document.getElementById("fechaSalida").value;
+        const vueltaDate = document.getElementById("fechaRegreso").value;
+        const precio = document.getElementById("precio").value;
+
+        // Obtén el valor del campo de archivos
+        const fileInput = document.getElementById("imagenes").files;
+
+        // Procesa cada archivo y conviértelo a base64
+        const urlImagenesArray = await Promise.all(
+            Array.from(fileInput).map(async (file) => {
+                const base64String = await convertFileToBase64(file);
+                return base64String;
+            })
+        );
+
+        const formulario = document.getElementById('crearProductoForm');
 
         const product = {
-            title,
-            body,
-            userId,
+            nombre,
+            destino,
+            salidaDate,
+            vueltaDate,
+            precio,
+            urlImagenes: urlImagenesArray,
         };
 
         fetchData(product);
+        formulario.reset();
     };
 
-    // Si se ingresar al panel desde un dispositivo móvil, muestra un mensaje que no está disponible. 
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 640); // Puedes ajustar el valor según tus necesidades
-        };
-
-        handleResize(); // Verificar el tamaño inicial al cargar la página
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    // Función para convertir un archivo a base64
+    const convertFileToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.onerror = (error) => reject(error);
+        });
+    };
 
     return (
         <>
@@ -91,7 +105,7 @@ const AddProduct = () => {
                                                     type="text"
                                                     name="nameProduct"
                                                     id="nameProduct"
-                                                    autocomplete="username"
+                                                    required
                                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                                 />
                                             </div>
@@ -110,7 +124,7 @@ const AddProduct = () => {
                                                     type="text"
                                                     name="destino"
                                                     id="destino"
-                                                    autocomplete="username"
+                                                    required
                                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                                 />
                                             </div>
@@ -129,7 +143,7 @@ const AddProduct = () => {
                                                     type="date"
                                                     name="fechaSalida"
                                                     id="fechaSalida"
-                                                    autocomplete="username"
+                                                    required
                                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                                 />
                                             </div>
@@ -148,7 +162,7 @@ const AddProduct = () => {
                                                     type="date"
                                                     name="fechaRegreso"
                                                     id="fechaRegreso"
-                                                    autocomplete="username"
+                                                    required
                                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                                 />
                                             </div>
@@ -167,28 +181,26 @@ const AddProduct = () => {
                                                     type="number"
                                                     name="precio"
                                                     id="precio"
-                                                    autocomplete="username"
+                                                    required
                                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                                 />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-span-4 sm:col-span-full">
-                                        <label
-                                            for="imagenes"
-                                            class="block text-sm font-medium leading-6 text-gray-900"
-                                        >
-                                            Imagenes
-                                        </label>
-                                        <div class="mt-2">
-                                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                                <input
-                                                    type="text"
-                                                    name="imagenes"
-                                                    id="imagenes"
-                                                    autocomplete="username"
-                                                    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                                />
+                                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Imagenes</label>
+                                        <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                                            <div class="flex flex-col items-center gap-2">
+                                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                                                    <label for="imagenes" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                                        <span>Cargar minimo 5 imagenes</span>
+                                                        <input required id="imagenes" name="file-upload" type="file" class="sr-only" multiple/>
+                                                    </label>
+                                                </div>
+                                                <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF hasta 10MB</p>
                                             </div>
                                         </div>
                                     </div>
@@ -197,12 +209,6 @@ const AddProduct = () => {
                         </div>
 
                         <div class="mt-6 flex items-center justify-end gap-x-6">
-                            <button
-                                type="button"
-                                class="text-sm font-semibold leading-6 text-gray-900"
-                            >
-                                <Link to="/administracion">Cancelar</Link>
-                            </button>
                             <button
                                 ref={guardar}
                                 type="submit"

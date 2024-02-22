@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Swal from 'sweetalert2';
 
 export function useFetchPost(url) {
     const [data, setData] = useState(null);
@@ -13,15 +14,18 @@ export function useFetchPost(url) {
                 },
             });
             const result = await response.json();
+            Swal.fire({
+                title: "Creado!",
+                text: "Su producto ha sido creado exitosamente.",
+                icon: "success",
+                color: "#01284d",
+                confirmButtonColor: "#5ba8d4",
+            });
             setData(result);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
-
-    useEffect(() => {
-        fetchData();
-    }, [url]);
 
     return { data, fetchData };
 }

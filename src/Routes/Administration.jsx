@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useMediaQuery } from 'react-responsive';
 import { Link } from "react-router-dom";
 import styles from "../styles/administration.module.css";
 
 const Administration = () => {
-  // Si se ingresar al panel desde un dispositivo móvil, muestra un mensaje que no está disponible.
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640); // Puedes ajustar el valor según tus necesidades
-    };
-
-    handleResize(); // Verificar el tamaño inicial al cargar la página
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <>
       {isMobile ? (
@@ -90,6 +77,7 @@ const Administration = () => {
                   </svg>
                   <span class="mx-2 text-sm font-medium">Lista de productos</span>
                 </Link>
+                
               </div>
             </nav>
           </div>

@@ -27,7 +27,7 @@ const aleatorio = (array) => {
 const ContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const url = "https://jsonplaceholder.typicode.com/photos";
+    const url = "http://localhost:8080/admin/productos";
 
     useEffect(() => {
         axios(url)
