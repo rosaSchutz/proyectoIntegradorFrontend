@@ -13,7 +13,7 @@ const Register = () => {
                     <div>
                         <label htmlFor="email" className={styles.input_label}>Email</label>
                         <div className={styles.div}>
-                            <input id="email" name="email" type="email" autocomplete="email" required className={styles.input} />
+                            <input id="email" name="email" type="email" required className={styles.input} />
                         </div>
                     </div>
 
@@ -22,7 +22,7 @@ const Register = () => {
                             <label htmlFor="password" className={styles.input_label}>Contraseña</label>
                         </div>
                         <div className={styles.div}>
-                            <input id="password" name="password" type="password" autocomplete="current-password" required className={styles.input} />
+                            <input id="password" name="password" type="password" required className={styles.input} />
                         </div>
                     </div>
 

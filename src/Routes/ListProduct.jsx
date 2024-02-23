@@ -3,6 +3,7 @@ import { useFetchGetAll } from "../Components/utils/useFetchGetAll";
 import { useMediaQuery } from 'react-responsive';
 import Administration from "./Administration";
 import Swal from 'sweetalert2';
+import axios from "axios";
 import styles from "../styles/listProduct.module.css";
 
 const ListProduct = () => {
@@ -27,10 +28,7 @@ const ListProduct = () => {
 
             if (result.isConfirmed) {
                 const url = `http://localhost:8080/admin/productos/${productId}`;
-                await fetch(url, {
-                    method: 'DELETE',
-                });
-
+                await axios.delete(url);
                 Swal.fire({
                     title: "Eliminado!",
                     text: "Su producto ha sido eliminado exitosamente.",

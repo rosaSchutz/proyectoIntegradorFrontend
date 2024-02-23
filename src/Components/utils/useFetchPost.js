@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import Swal from 'sweetalert2';
 
 export function useFetchPost(url) {
@@ -6,14 +7,8 @@ export function useFetchPost(url) {
 
     const fetchData = async (product) => {
         try {
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(product),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            });
-            const result = await response.json();
+            const response = await axios.post(url, product);
+            setData(response.data);
             Swal.fire({
                 title: "Creado!",
                 text: "Su producto ha sido creado exitosamente.",
@@ -21,11 +16,10 @@ export function useFetchPost(url) {
                 color: "#01284d",
                 confirmButtonColor: "#5ba8d4",
             });
-            setData(result);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
 
-    return { data, fetchData };
+    return { fetchData };
 }
