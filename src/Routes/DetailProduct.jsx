@@ -6,9 +6,7 @@ import styles from "../styles/detailProduct.module.css";
 
 const DetailProduct = () => {
     const { id } = useParams();
-    const { data } = useFetchGetID(
-        "http://localhost:8080/admin/productos/" + id
-    );
+    const { data } = useFetchGetID("http://localhost:8080/admin/productos/" + id);
     console.log(data)
 
     return (
@@ -40,6 +38,36 @@ const DetailProduct = () => {
                     </div>
                 </div>
 
+
+            <section className={styles.gallery}>
+                <div className={styles.galleryContainer}>
+                    <div className={styles.leftContainer}>
+                        <img
+                            src={"data:image/jpeg;base64," + data?.urlImagenes[0]}
+                            alt=""
+                            className={styles.leftImg}
+                        />
+                    </div>
+                    <div className={styles.rightContainer}>
+                        {data?.urlImagenes.slice(1, 5).map((imagenes, index) => (
+                            <div key={index} className={styles.rightDiv}>
+                                <img
+                                    src={"data:image;base64," + imagenes}
+                                    alt=""
+                                    className={styles.rightImg}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className={styles.more}>
+                    <button className={styles.button}>
+                        <Link to={"/product/" + id + "/gallery"} className={styles.details__buttons}>Mostrar todas las fotos</Link>
+                    </button>
+                </div>
+            </section>
+
                 <hr />
                 <div className={styles.description_property}>
                     <span className={styles.span1}>Destino</span>
@@ -60,37 +88,8 @@ const DetailProduct = () => {
                         {data?.precio} USD
                     </span>
                     <a href="#" className={styles.details__buttons}>
-                        Contactá a un vendedor
+                        Reservar
                     </a>
-                </div>
-            </section>
-
-            <section className={styles.gallery}>
-                <div className={styles.galleryContainer}>
-                    <div className={styles.leftContainer}>
-                        <img
-                            src={"data:image/jpeg;base64," + data?.urlImagenes[0]}
-                            alt=""
-                            className={styles.leftImg}
-                        />
-                    </div>
-                    <div className={styles.rightContainer}>
-                        {data?.urlImagenes.slice(1,5).map((imagenes, index) => (
-                            <div key={index} className={styles.rightDiv}>
-                                <img
-                                    src={"data:image;base64," + imagenes}
-                                    alt=""
-                                    className={styles.rightImg}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className={styles.more}>
-                    <button className={styles.button}>
-                        <Link to={"/product/" + id + "/gallery"} className={styles.details__buttons}>Ver más</Link>
-                    </button>
                 </div>
             </section>
         </article>

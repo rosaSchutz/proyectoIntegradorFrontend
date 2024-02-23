@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useFetchGetAll } from "../Components/utils/useFetchGetAll";
 import { useMediaQuery } from 'react-responsive';
 import Administration from "./Administration";
@@ -7,9 +7,7 @@ import axios from "axios";
 import styles from "../styles/listProduct.module.css";
 
 const ListProduct = () => {
-    const { data } = useFetchGetAll(
-        "http://localhost:8080/admin/productos"
-    );
+    const { data } = useFetchGetAll("http://localhost:8080/admin/productos");
 
     const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
@@ -42,8 +40,6 @@ const ListProduct = () => {
             // Manejar errores, si es necesario
         }
     };
-
-
 
     return (
         <>

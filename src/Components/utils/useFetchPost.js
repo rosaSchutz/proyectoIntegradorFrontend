@@ -17,7 +17,18 @@ export function useFetchPost(url) {
                 confirmButtonColor: "#5ba8d4",
             });
         } catch (error) {
-            console.error('Error fetching data:', error);
+            if (error.response.status === 409) {
+                console.log("Error: " + error.response.data);
+                Swal.fire({
+                    title: "Error ya existe un producto con ese nombre!",
+                    text: "Error: " + error.response.data,
+                    icon: "error",
+                    color: "#01284d",
+                    confirmButtonColor: "#5ba8d4",
+                });
+            } else {
+                console.error('Error fetching data:', error);
+            }
         }
     };
 

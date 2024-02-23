@@ -7,11 +7,10 @@ import * as Yup from 'yup';
 import styles from "../styles/addProduct.module.css";
 
 const AddProduct = () => {
-    const { fetchData } = useFetchPost(
-        "http://localhost:8080/admin/productos/guardar"
-    );
+    const { fetchData } = useFetchPost("http://localhost:8080/admin/productos/guardar");
 
-    /*
+    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
     // Función para convertir un archivo a base64
     const convertFileToBase64 = (file) => {
         return new Promise((resolve, reject) => {
@@ -22,22 +21,7 @@ const AddProduct = () => {
         });
     };
 
-    const handleFileChange = async () => {
-        const fileInput = fileInputRef.current.files;
-
-        // Procesa cada archivo y conviértelo a base64
-        const urlImagenes = await Promise.all(
-            Array.from(fileInput).map(async (file) => {
-                const base64String = await convertFileToBase64(file);
-                return base64String;
-            })
-        );
-
-        // Actualiza el estado de formik con las imágenes procesadas
-        //formik.setFieldValue("urlImagenes", urlImagenes);
-    };
-    */
-
+    /*Usando Formik y yup*/
     let initialValues = {
         nombre: "",
         destino: "",
@@ -48,18 +32,39 @@ const AddProduct = () => {
     };
 
     const onSubmit = async (data) => {
+        console.log('Submitted Data:', data);
+    
         let product = {
             nombre: data.nombre,
             destino: data.destino,
             salidaDate: data.salidaDate,
             vueltaDate: data.vueltaDate,
             precio: data.precio,
-            urlImagenes: ["url3", "url4"]
+            urlImagenes: data.urlImagenes
         };
-
+    
+        console.log('Product:', product);
+    
         fetchData(product);
     };
 
+    const handleFileChange = async () => {
+        const fileInput = document.getElementById("urlImagenes").files;
+    
+        // Procesa cada archivo y conviértelo a base64
+        const urlImagenes = await Promise.all(
+            Array.from(fileInput).map(async (file) => {
+                const base64String = await convertFileToBase64(file);
+                return base64String;
+            })
+        );
+    
+        console.log('Processed Images:', urlImagenes);
+    
+        // Actualiza el estado de formik con las imágenes procesadas
+        formik.setFieldValue("urlImagenes", urlImagenes);
+    };
+    
     const formik = useFormik({
         initialValues,
         validationSchema: Yup.object({
@@ -67,13 +72,11 @@ const AddProduct = () => {
             destino: Yup.string().lowercase().trim().required(),
             salidaDate: Yup.date().required(),
             vueltaDate: Yup.date().required(),
-            precio: Yup.number().min(1).required(),
+            precio: Yup.number().min(1).positive().required(),
             urlImagenes: Yup.array(),
         }),
         onSubmit,
     });
-
-    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
     return (
         <>
@@ -218,7 +221,7 @@ const AddProduct = () => {
                                             htmlFor="cover-photo"
                                             class="block text-sm font-medium leading-6 text-gray-900"
                                         >
-                                            urlImagenes
+                                            Imagenes
                                         </label>
                                         <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                                             <div class="flex flex-col items-center gap-2">
@@ -244,10 +247,9 @@ const AddProduct = () => {
                                                             id="urlImagenes"
                                                             name="urlImagenes"
                                                             type="file"
-                                                            class="sr-only"
+                                                            className="sr-only"
                                                             multiple
-                                                            onChange={formik.handleChange}
-                                                            value={formik.values.urlImagenes}
+                                                            onChange={handleFileChange}
                                                         />
                                                     </label>
                                                 </div>

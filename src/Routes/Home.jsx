@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContextGlobal } from "../Components/utils/global.context";
+import { useFetchPostHome } from "../Components/utils/useFetchPostHome";
 import SearchButton from "../Components/ui/Buttons/SearchButton";
 import CarouselCategory from "../Components/CarouselCategory";
 import Card from "../Components/Card";
@@ -8,7 +9,11 @@ import styles from "../styles/home.module.css"
 
 const Home = () => {
     const { state } = useContextGlobal();
-    console.log("Data home:", state.data);
+    
+    //Para borrar despues, es solo mientras hay test de cargas de datos iniciales
+    /*
+    useFetchPostHome("http://localhost:8080/admin/productos/guardar");
+    */
 
     //algoritmo de Fisher-Yates para barajar aleatoriamente un array
     const aleatorio = (array) => {

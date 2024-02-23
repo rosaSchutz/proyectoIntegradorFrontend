@@ -6,9 +6,7 @@ import styles from "../styles/galleryImages.module.css";
 
 const GalleryImages = () => {
     const { id } = useParams();
-    const { data } = useFetchGetID(
-        "http://localhost:8080/admin/productos/" + id
-    );
+    const { data } = useFetchGetID("http://localhost:8080/admin/productos/" + id);
     console.log(data)
 
     return (
