@@ -33,6 +33,7 @@ const ContextProvider = ({ children }) => {
             {children}
         </ContextGlobal.Provider>
     );
+    
 };
 
 export default ContextProvider

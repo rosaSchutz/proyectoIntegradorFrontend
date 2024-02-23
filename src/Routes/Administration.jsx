@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useMediaQuery } from 'react-responsive';
 import { Link } from "react-router-dom";
 import styles from "../styles/administration.module.css";

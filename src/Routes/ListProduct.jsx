@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetchGetAll } from "../Components/utils/useFetchGetAll";
+import { useFetchGetAll } from "../PeticionesHTTP/Productos/useFetchGetAll";
 import { useMediaQuery } from 'react-responsive';
 import Administration from "./Administration";
 import Swal from 'sweetalert2';

@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetchPost } from "../Components/utils/useFetchPost";
+import { useFetchPost } from "../PeticionesHTTP/Productos/useFetchPost";
 import { useMediaQuery } from "react-responsive";
 import Administration from "./Administration";
 import { useFormik } from "formik";
@@ -68,12 +68,12 @@ const AddProduct = () => {
     const formik = useFormik({
         initialValues,
         validationSchema: Yup.object({
-            nombre: Yup.string().lowercase().trim().required(),
-            destino: Yup.string().lowercase().trim().required(),
-            salidaDate: Yup.date().required(),
-            vueltaDate: Yup.date().required(),
-            precio: Yup.number().min(1).positive().required(),
-            urlImagenes: Yup.array(),
+            nombre: Yup.string().lowercase().trim().required("Requerido"),
+            destino: Yup.string().lowercase().trim().required("Requerido"),
+            salidaDate: Yup.date().required("Requerido"),
+            vueltaDate: Yup.date().required("Requerido"),
+            precio: Yup.number().min(1).positive().required("Requerido"),
+            urlImagenes: Yup.array().min(5, "Debes agregar al menos 5 imágenes").required("Requerido"),
         }),
         onSubmit,
     });
@@ -242,7 +242,7 @@ const AddProduct = () => {
                                                         htmlFor="urlImagenes"
                                                         class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                                                     >
-                                                        <span>Cargar minimo 5 imagenes</span>
+                                                        <span>Debes cargar minimo 5 imagenes</span>
                                                         <input
                                                             id="urlImagenes"
                                                             name="urlImagenes"

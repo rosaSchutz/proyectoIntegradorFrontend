@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useContextGlobal } from "../Components/utils/global.context";
-import { useFetchPostHome } from "../Components/utils/useFetchPostHome";
+import React from "react";
+import { useContextGlobal } from "../Context/global.context";
+import { useFetchPostHome } from "../PeticionesHTTP/Productos/useFetchPostHome";
 import SearchButton from "../Components/ui/Buttons/SearchButton";
 import CarouselCategory from "../Components/CarouselCategory";
 import Card from "../Components/Card";
